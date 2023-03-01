@@ -15,9 +15,10 @@ export class ListeArticlesComponent implements OnInit{
       this.ArticleSer = JSON.parse(localStorage.getItem('articles')!) || [];
   }
   onDelete(index:any) {
-    
-    this.ArticleService.deleteArticle(index);
-    alert('Article Successfully Deleted');
+    if (confirm("Are you sure you want to delete this article?")){
+      this.ArticleService.deleteArticle(index);
+      alert('Article Successfully Deleted');
+    }
     this.ngOnInit()
   }
 

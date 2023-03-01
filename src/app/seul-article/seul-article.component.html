@@ -1,7 +1,9 @@
 <div class="InterBody">
-  <p> <strong>{{ListeArticles[ActualId].title}}</strong></p>
+  <button class="btn btn-primary me-2"  (click)="goPrevious()">Previous</button>
+  <button  class="btn btn-primary"  (click)="goNext()"> Next</button>
+  <p> <strong>{{ListeArticles[ActualId].title}}</strong></p><small>by {{ListeArticles[ActualId].auteur}}</small> <br>
   <p>{{ListeArticles[ActualId].content}}</p>
-  <small>by {{ListeArticles[ActualId].auteur}}</small> <br>
+ 
 
   <button class="btn btn-primary me-2"  (click)="goPrevious()">Previous</button>
   <button  class="btn btn-primary"  (click)="goNext()"> Next</button>
