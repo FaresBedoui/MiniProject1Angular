@@ -11,7 +11,7 @@
     <div>
       <label for="article-content" class="form-label">Content:</label>
       <textarea formControlName="content" id="article-content" class="form-control"></textarea>
-      <mat-error *ngIf="articleForm.controls['content'].hasError('required')&& articleForm.controls['content'].touched">
+      <mat-error *ngIf="articleForm.controls['content'].hasError('required') && articleForm.controls['content'].touched">
         Content is required.
       </mat-error>
     </div>
@@ -24,6 +24,6 @@
       </mat-error>
     </div>
 
-    <button mat-flat-button color="primary" type="submit" [disabled]="articleForm.invalid">Add Article</button>
+    <button mat-flat-button color="primary" type="submit" [disabled]="articleForm.invalid">Save Changes</button>
   </form>
 </div>

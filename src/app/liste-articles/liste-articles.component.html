@@ -1,24 +1,19 @@
-
-<!-- <mat-grid-list cols="4" rowHeight="2:1">
-  <mat-grid-tile style="border: 1px solid #3F51B5; border-radius: 5px; color: #283593; font-size: x-large; " *ngFor="let article of ArticleSer| filter:filterValue,, index as i " routerLink="/articles/{{i}}">
-    <div><strong>{{article.title}} </strong> </div> 
-    <mat-grid-tile-footer style="background-color:#3F51B5"> by {{article.auteur}} </mat-grid-tile-footer>
-  </mat-grid-tile>
-</mat-grid-list> -->
-<input type="text" [(ngModel)]="filterValue" placeholder="Rechercher..." class="form-control">
-<mat-grid-list cols="4" rowHeight="2:1">
-  <mat-grid-tile style="border: 1px solid #3F51B5; border-radius: 4px; color: #283593; font-size: x-large; " *ngFor="let article of ArticleSer | filter: filterValue; let i = index" routerLink="/articles/{{i}}">
-    <div >
-      <strong>{{ article.title }}</strong>
-      <mat-grid-tile-footer style="background-color:#3F51B5"> by {{ article.auteur }}</mat-grid-tile-footer>
-      <div style="display: flex; justify-content: space-between; margin-top: 10px;">
-        <button mat-icon-button color="primary" routerLink="/articles/edit/{{ i }}">
-          <mat-icon>edit</mat-icon>
-        </button>
-        <button mat-icon-button color="warn" (click)="onDelete(i)">
-          <mat-icon>delete</mat-icon>
-        </button>
+<div class="InterBody">
+  <input type="text" [(ngModel)]="filterValue" placeholder="Rechercher..." class="form-control my-4">
+  <mat-grid-list cols="4" rowHeight="2:1">
+    <mat-grid-tile style="border: 1px solid #3F51B5; border-radius: 4px; color: #283593; font-size: x-large; " *ngFor="let article of ArticleSer | filter: filterValue; let i = index" routerLink="/articles/{{i}}">
+      <div >
+        <strong>{{ article.title }}</strong>
+        <mat-grid-tile-footer style="background-color:#3F51B5"> by {{ article.auteur }}</mat-grid-tile-footer>
+        <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+          <button mat-icon-button color="primary" routerLink="/articles/edit/{{ i }}">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="onDelete(i)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
       </div>
-    </div>
-  </mat-grid-tile>
-</mat-grid-list>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

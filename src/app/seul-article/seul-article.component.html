@@ -1,6 +1,8 @@
-<h1> {{ListeArticles[ActualId].title}}</h1>
-<p>{{ListeArticles[ActualId].content}}</p>
-<small>{{ListeArticles[ActualId].auteur}}</small> <br>
+<div class="InterBody">
+  <p> <strong>{{ListeArticles[ActualId].title}}</strong></p>
+  <p>{{ListeArticles[ActualId].content}}</p>
+  <small>by {{ListeArticles[ActualId].auteur}}</small> <br>
 
-<button (click)="goPrevious()">Previous</button>
-<button (click)="goNext()">   Next</button>
+  <button class="btn btn-primary me-2"  (click)="goPrevious()">Previous</button>
+  <button  class="btn btn-primary"  (click)="goNext()"> Next</button>
+</div>

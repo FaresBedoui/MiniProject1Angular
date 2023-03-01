@@ -14,11 +14,13 @@ import { AddArticleComponent } from './add-article/add-article.component';
 import { SeulArticleComponent } from './seul-article/seul-article.component';
 import { FilterPipe } from './filter.pipe';
 import { ErrorsComponent } from './errors/errors.component';
+import { EditComponent } from './edit/edit.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/articles', pathMatch: 'full' },
   { path: 'articles', component: ListeArticlesComponent },
   { path: 'ajout', component: AddArticleComponent },
+  { path: 'articles/edit/:i', component: EditComponent },
   { path: 'articles/:i', component: SeulArticleComponent },
   { path: '404', component: ErrorsComponent },
   { path: '**', redirectTo: '/404' }
@@ -30,7 +32,8 @@ const appRoutes: Routes = [
     ListeArticlesComponent,
     AddArticleComponent,
     FilterPipe,
-    ErrorsComponent
+    ErrorsComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,
