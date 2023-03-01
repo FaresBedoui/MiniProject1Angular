@@ -1,0 +1,6 @@
+<input type="text" [(ngModel)]="filterValue" placeholder="Rechercher...">
+<ul>
+  <li *ngFor="let article of ArticleSer| filter:filterValue,, index as i ">
+    <a routerLink="/articles/{{i}}">{{i+1}} - {{article.title}} by {{article.auteur}}</a>
+  </li>
+</ul>

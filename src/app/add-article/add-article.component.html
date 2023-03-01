@@ -1,0 +1,18 @@
+<form #userForm="ngForm" >
+  <div>
+    <label for="article-title" class="form-label">Title:</label>
+    <input type="text" name="title" [(ngModel)]="articleTitle" id="article-title" class="form-control">
+  </div>
+
+  <div>
+    <label for="article-content" class="form-label">Content:</label>
+    <textarea name="content" [(ngModel)]="articleContent" id="article-content" class="form-control"></textarea>
+  </div>
+
+  <div>
+    <label for="article-auteur" class="form-label">Auteur:</label>
+    <input type="text" name="auteur" [(ngModel)]="articleAuteur" id="article-auteur" class="form-control">
+  </div>  
+
+  <button mat-flat-button color="primary" type="button" (click)="addArticle(articleTitle, articleContent,articleAuteur )">Add Article</button>
+</form>
