@@ -1,18 +1,36 @@
-<form #userForm="ngForm" >
+<form [formGroup]="articleForm" (ngSubmit)="onSubmit()">
   <div>
     <label for="article-title" class="form-label">Title:</label>
-    <input type="text" name="title" [(ngModel)]="articleTitle" id="article-title" class="form-control">
+    <input type="text" formControlName="title" id="article-title" class="form-control">
+    <mat-error *ngIf="articleForm.controls['title'].hasError('required') && articleForm.controls['title'].touched">
+      Title is required.
+    </mat-error>
   </div>
 
   <div>
     <label for="article-content" class="form-label">Content:</label>
-    <textarea name="content" [(ngModel)]="articleContent" id="article-content" class="form-control"></textarea>
+    <textarea formControlName="content" id="article-content" class="form-control"></textarea>
+    <mat-error *ngIf="articleForm.controls['content'].hasError('required')&& articleForm.controls['content'].touched">
+      Content is required.
+    </mat-error>
   </div>
 
   <div>
     <label for="article-auteur" class="form-label">Auteur:</label>
-    <input type="text" name="auteur" [(ngModel)]="articleAuteur" id="article-auteur" class="form-control">
-  </div>  
+    <input type="text" formControlName="auteur" id="article-auteur" class="form-control">
+    <mat-error *ngIf="articleForm.controls['auteur'].hasError('required') && articleForm.controls['auteur'].touched">
+      Auteur is required.
+    </mat-error>
+  </div>
 
-  <button mat-flat-button color="primary" type="button" (click)="addArticle(articleTitle, articleContent,articleAuteur )">Add Article</button>
+  <button mat-flat-button color="primary" type="submit" [disabled]="articleForm.invalid">Add Article</button>
 </form>
+
+
+
+
+
+
+
+
+
