@@ -22,4 +22,9 @@ export class ArticleService {
     this.articles.push(article);
     localStorage.setItem('articles', JSON.stringify(this.articles));
   }
+  //Added
+  deleteArticle(index: number) {
+    this.articles.splice(index, 1);
+    localStorage.setItem('articles', JSON.stringify(this.articles));
+  }
 }

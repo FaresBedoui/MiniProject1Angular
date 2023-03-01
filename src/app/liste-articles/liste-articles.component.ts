@@ -9,10 +9,16 @@ import { ArticleService, Article } from '../article.service';
 export class ListeArticlesComponent implements OnInit{
   public ArticleSer: any;
   filterValue: string = '';
-  constructor(){}
+  constructor(private ArticleService: ArticleService){}
 
   ngOnInit(): void {
       this.ArticleSer = JSON.parse(localStorage.getItem('articles')!) || [];
+  }
+  onDelete(index:any) {
+    
+    this.ArticleService.deleteArticle(index);
+    alert('Article Successfully Deleted');
+    this.ngOnInit()
   }
 
 }
