@@ -1,0 +1,12 @@
+.InterBody{
+  margin: 4%;
+  font-size: 200%;
+  line-height: 150%;
+}
+label{
+  color: #19256d ;
+}
+small{
+  font-size: small;
+  font-style: italic;
+}
