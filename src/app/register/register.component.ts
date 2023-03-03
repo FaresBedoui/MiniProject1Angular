@@ -22,7 +22,7 @@ export class RegisterComponent {
     }
     try {
       this.authService.register(this.email, this.password);
-      this.router.navigate(['/login']); // redirect to login page after successful registration
+      this.router.navigate(['/login']); 
     } catch (error) {
       this.registerError = (error as Error).message;
     }

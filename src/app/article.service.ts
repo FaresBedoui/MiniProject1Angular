@@ -27,4 +27,10 @@ export class ArticleService {
     this.articles.splice(index, 1);
     localStorage.setItem('articles', JSON.stringify(this.articles));
   }
+
+  editArticle(index: number, updatedArticle: Article) {
+    this.articles[index] = updatedArticle;
+    localStorage.setItem('articles', JSON.stringify(this.articles));
+  }
+  
 }

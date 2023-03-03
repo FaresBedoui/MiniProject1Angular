@@ -17,7 +17,7 @@ export class LoginComponent {
   login() {
     try {
       this.authService.login(this.email, this.password);
-      this.router.navigate(['/articles']); // redirect to articles page after successful login
+      this.router.navigate(['/articles']); 
     } catch (error) {
       this.loginError = (error as Error).message;
     }
